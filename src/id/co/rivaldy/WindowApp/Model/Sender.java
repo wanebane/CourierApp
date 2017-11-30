@@ -11,6 +11,7 @@ public class Sender {
     private String province;
     private String address;
     private String postalCode;
+    String postCode;
 
     public Sender() {
     }

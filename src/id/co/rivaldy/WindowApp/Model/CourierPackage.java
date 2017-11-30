@@ -12,7 +12,7 @@ import java.util.Date;
  * @author RomyRivaldy
  */
 public class CourierPackage {
-
+String courier;
     private String packageCode;
     private String destionation;
     private String jenisBarang;

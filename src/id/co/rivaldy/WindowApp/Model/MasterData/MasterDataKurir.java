@@ -5,7 +5,7 @@ package id.co.rivaldy.WindowApp.Model.MasterData;
  * @author RomyRivaldy
  */
 public class MasterDataKurir {
-
+String kurir;
     private final double insurance = 0.03;
 
     private String deliveryType;

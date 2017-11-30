@@ -18,7 +18,7 @@ import java.util.logging.Logger;
  * @author RomyRivaldy
  */
 public class TarifFileDao {
-
+String doa;
     public static List<MasterDataKurir> getListData() {
         List<MasterDataKurir> dataList = new ArrayList();
         try {

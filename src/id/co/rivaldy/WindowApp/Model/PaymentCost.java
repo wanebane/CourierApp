@@ -6,6 +6,4 @@ package id.co.rivaldy.WindowApp.Model;
  */
 public class PaymentCost {
 
-    private final double insurance = 0.03;
-
 }

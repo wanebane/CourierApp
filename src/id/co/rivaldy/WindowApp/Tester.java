@@ -21,7 +21,6 @@ public class Tester {
         CourierPackage paket = new CourierPackage();
         paket.setWeight(2.0);
         paket.setHeights(2.0);
-        paket.setLengths(5.0);
     }
     
 }

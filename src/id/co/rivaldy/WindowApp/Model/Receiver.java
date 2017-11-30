@@ -10,7 +10,7 @@ public class Receiver {
     private String province;
     private String address;
     private String postalCode;
-
+String post;
     public Receiver() {
     }
     

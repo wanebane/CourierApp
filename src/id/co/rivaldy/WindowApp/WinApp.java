@@ -119,6 +119,7 @@ public class WinApp extends javax.swing.JFrame {
         jRadioButton5 = new javax.swing.JRadioButton();
         jPanel6 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -554,6 +555,8 @@ public class WinApp extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jButton1.setText("jButton1");
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -568,7 +571,11 @@ public class WinApp extends javax.swing.JFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jTabbedPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(691, Short.MAX_VALUE))
         );
@@ -587,7 +594,9 @@ public class WinApp extends javax.swing.JFrame {
                         .addComponent(jTabbedPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(41, 41, 41)
-                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -704,6 +713,7 @@ public class WinApp extends javax.swing.JFrame {
     private javax.swing.JScrollPane formInputScrollPane;
     private javax.swing.JLabel hargaPaketLabel;
     private javax.swing.JTextField hargabarangPaketField;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBox5;
     private com.toedter.calendar.JDateChooser jDateChooser1;
