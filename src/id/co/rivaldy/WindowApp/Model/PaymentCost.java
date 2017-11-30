@@ -8,8 +8,4 @@ public class PaymentCost {
 
     private final double insurance = 0.03;
 
-    public double getCalculate() {
-        int test = 0;
-        return test;
-    }
 }
