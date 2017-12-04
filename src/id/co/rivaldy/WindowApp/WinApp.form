@@ -56,17 +56,27 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="formInputScrollPane" alignment="0" pref="793" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="formInputScrollPane" min="-2" pref="1059" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="formInputScrollPane" alignment="0" pref="839" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="formInputScrollPane" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JScrollPane" name="formInputScrollPane">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+        <Property name="verticalScrollBarPolicy" type="int" value="21"/>
+      </Properties>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
@@ -75,28 +85,29 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jTabbedPane1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jTabbedPane2" min="-2" pref="370" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jTabbedPane3" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jPanel6" max="32767" attributes="0"/>
-                                  <Group type="102" attributes="0">
-                                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Component id="jLabel2" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jTabbedPane2" max="32767" attributes="0"/>
+                                  <Component id="jTabbedPane1" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="submitButton" min="-2" pref="144" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="Reset" min="-2" pref="144" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="jTabbedPane3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace pref="691" max="32767" attributes="0"/>
+                      <EmptySpace pref="20" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -105,24 +116,24 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jTabbedPane1" min="-2" pref="350" max="-2" attributes="0"/>
-                          <Component id="jTabbedPane2" min="-2" pref="350" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="Reset" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                                  <Component id="submitButton" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                              <Component id="jTabbedPane3" min="-2" pref="347" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="jTabbedPane1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jTabbedPane3" min="-2" pref="404" max="-2" attributes="0"/>
+                              <Component id="jTabbedPane2" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                              <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jPanel6" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -181,18 +192,17 @@
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="noSendField" max="32767" attributes="0"/>
-                                          <Component id="jScrollPane1" pref="278" max="32767" attributes="0"/>
+                                          <Component id="jScrollPane1" max="32767" attributes="0"/>
                                           <Group type="102" attributes="0">
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="kotaSendCombo" pref="120" max="32767" attributes="0"/>
+                                                  <Component id="kotaSendCombo" max="32767" attributes="0"/>
                                                   <Component id="kdPosSendField" max="32767" attributes="0"/>
                                               </Group>
                                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           </Group>
-                                          <Component id="provinsiSenderField" max="32767" attributes="0"/>
+                                          <Component id="provinsiSendField" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Component id="submitSendButton" alignment="1" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -214,7 +224,7 @@
                               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="provinsiSendLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="provinsiSenderField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="provinsiSendField" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -231,9 +241,7 @@
                                   <Component id="kdPosSendLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="kdPosSendField" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="24" max="32767" attributes="0"/>
-                              <Component id="submitSendButton" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -271,7 +279,9 @@
                     <Component class="javax.swing.JComboBox" name="kotaSendCombo">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="0"/>
+                          <StringArray count="1">
+                            <StringItem index="0" value="Jakarta"/>
+                          </StringArray>
                         </Property>
                       </Properties>
                       <Events>
@@ -292,6 +302,9 @@
                         <Component class="javax.swing.JTextArea" name="alamatSendArea">
                           <Properties>
                             <Property name="columns" type="int" value="20"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Tahoma" size="11" style="0"/>
+                            </Property>
                             <Property name="rows" type="int" value="5"/>
                           </Properties>
                         </Component>
@@ -304,15 +317,7 @@
                     </Component>
                     <Component class="javax.swing.JTextField" name="kdPosSendField">
                     </Component>
-                    <Component class="javax.swing.JButton" name="submitSendButton">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Submit"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="submitSendButtonActionPerformed"/>
-                      </Events>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="provinsiSenderField">
+                    <Component class="javax.swing.JTextField" name="provinsiSendField">
                     </Component>
                   </SubComponents>
                 </Container>
@@ -346,31 +351,26 @@
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="noReceiveLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="provinsiReceiveLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="kotaReceiveLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="namaReceiveLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="alamatReceiveLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="kdPosReceiveLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="namaReceiveField" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="noReceiveField" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="noReceiveLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="provinsiReceiveLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="kotaReceiveLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="namaReceiveLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="alamatReceiveLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="kdPosReceiveLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="kotaReceiveCombo" min="-2" pref="120" max="-2" attributes="0"/>
+                                          <Component id="kdPosReceiveField" min="-2" pref="120" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jScrollPane2" alignment="0" pref="268" max="32767" attributes="0"/>
-                                          <Component id="namaReceiveField" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="noReceiveField" alignment="0" max="32767" attributes="0"/>
-                                          <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="kotaReceiveCombo" min="-2" pref="120" max="-2" attributes="0"/>
-                                                  <Component id="kdPosReceiveField" min="-2" pref="120" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Component id="provinsiReceiverField" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
-                                  <Component id="submitReceiveButton" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="provinsiReceiverField" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -409,9 +409,7 @@
                                   <Component id="kdPosReceiveLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="kdPosReceiveField" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="24" max="32767" attributes="0"/>
-                              <Component id="submitReceiveButton" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -459,7 +457,8 @@
                         </Property>
                       </Properties>
                       <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JComboBox&lt;&gt;(kotaTujuan.toArray())"/>
+                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Object&gt;"/>
                       </AuxValues>
                     </Component>
                     <Container class="javax.swing.JScrollPane" name="jScrollPane2">
@@ -472,6 +471,9 @@
                         <Component class="javax.swing.JTextArea" name="alamatReceiveArea">
                           <Properties>
                             <Property name="columns" type="int" value="20"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Tahoma" size="11" style="0"/>
+                            </Property>
                             <Property name="rows" type="int" value="5"/>
                           </Properties>
                         </Component>
@@ -483,11 +485,6 @@
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="kdPosReceiveField">
-                    </Component>
-                    <Component class="javax.swing.JButton" name="submitReceiveButton">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Submit"/>
-                      </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="provinsiReceiverField">
                     </Component>
@@ -523,27 +520,6 @@
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="noPaketLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="tujuanPaketLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jenisPaketLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="beratPaketLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="tanggalPaketLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="kotaTujuanPaketLabel" min="-2" max="-2" attributes="0"/>
-                                          <Component id="noResiPaketLabel" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jTextField10" alignment="0" min="-2" pref="160" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jTextField11" min="-2" pref="51" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Component id="jDateChooser1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
                                   <Component id="jPanel4" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -553,32 +529,53 @@
                                           <Component id="metodePaketLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="yesAsuransiRadio" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="noAsuransiRadio" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="tipeCombo" max="32767" attributes="0"/>
+                                          <Component id="hargabarangPaketField" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="metodeCombo" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Group type="102" attributes="0">
-                                                  <Component id="yesAsuransiRadio" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="noAsuransiRadio" min="-2" max="-2" attributes="0"/>
+                                          <Component id="noPaketLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jenisPaketLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="beratPaketLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="tanggalPaketLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="tujuanPaketLabel" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="kotaKirimPaketLabel" min="-2" pref="60" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="noResiPaketLabel" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Component id="beratPaketField" min="-2" pref="51" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Component id="tanggalKirimDate" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jenisCombo" alignment="0" min="-2" pref="109" max="-2" attributes="0"/>
                                               </Group>
-                                              <Component id="jComboBox5" pref="110" max="32767" attributes="0"/>
-                                              <Component id="hargabarangPaketField" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="jRadioButton4" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="jRadioButton5" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="kotaTujuanPaketLabel" min="-2" pref="60" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="290" max="-2" attributes="0"/>
-                              <Component id="jButton3" max="32767" attributes="0"/>
-                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="116" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -594,29 +591,31 @@
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="tujuanPaketLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="kotaTujuanPaketLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="kotaKirimPaketLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jenisPaketLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField10" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jenisCombo" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="beratPaketLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField11" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="beratPaketField" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="tanggalPaketLabel" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jDateChooser1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tanggalKirimDate" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="tipePaketLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tipeCombo" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -632,13 +631,9 @@
                               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="metodePaketLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jRadioButton3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jRadioButton4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jRadioButton5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="metodeCombo" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                              <Component id="jButton3" max="32767" attributes="0"/>
-                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -651,7 +646,7 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="tujuanPaketLabel">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Kota Tujuan"/>
+                        <Property name="text" type="java.lang.String" value="Dari"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jenisPaketLabel">
@@ -678,20 +673,20 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="dimensiPaketLabel" min="-2" max="-2" attributes="0"/>
                                       <Group type="102" attributes="0">
-                                          <Component id="jTextField7" min="-2" pref="50" max="-2" attributes="0"/>
+                                          <Component id="pPaketField" min="-2" pref="50" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jTextField8" min="-2" pref="49" max="-2" attributes="0"/>
+                                          <Component id="lPaketField" min="-2" pref="49" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jTextField9" min="-2" pref="53" max="-2" attributes="0"/>
+                                          <Component id="tPaketField" min="-2" pref="53" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace min="0" pref="43" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -701,11 +696,11 @@
                                   <Component id="dimensiPaketLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jTextField7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="pPaketField" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel21" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lPaketField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="tPaketField" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -718,21 +713,21 @@
                             <Property name="text" type="java.lang.String" value="Dimensi"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField7">
+                        <Component class="javax.swing.JTextField" name="pPaketField">
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel21">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="cm"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField8">
+                        <Component class="javax.swing.JTextField" name="lPaketField">
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel20">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="cm"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField9">
+                        <Component class="javax.swing.JTextField" name="tPaketField">
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel22">
                           <Properties>
@@ -771,28 +766,27 @@
                         <Property name="text" type="java.lang.String" value="      "/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField10">
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField11">
+                    <Component class="javax.swing.JTextField" name="beratPaketField">
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel29">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="kg"/>
                       </Properties>
                     </Component>
-                    <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
+                    <Component class="com.toedter.calendar.JDateChooser" name="tanggalKirimDate">
                       <Properties>
                         <Property name="dateFormatString" type="java.lang.String" value="dd/MM/YYYY"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JComboBox" name="jComboBox5">
+                    <Component class="javax.swing.JComboBox" name="tipeCombo">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="4">
-                            <StringItem index="0" value="Item 1"/>
-                            <StringItem index="1" value="Item 2"/>
-                            <StringItem index="2" value="Item 3"/>
-                            <StringItem index="3" value="Item 4"/>
+                          <StringArray count="5">
+                            <StringItem index="0" value="Reguler"/>
+                            <StringItem index="1" value="Kilat"/>
+                            <StringItem index="2" value="SDS"/>
+                            <StringItem index="3" value="ONS"/>
+                            <StringItem index="4" value="HDS"/>
                           </StringArray>
                         </Property>
                       </Properties>
@@ -824,46 +818,74 @@
                     </Component>
                     <Component class="javax.swing.JTextField" name="hargabarangPaketField">
                     </Component>
-                    <Component class="javax.swing.JButton" name="jButton3">
+                    <Component class="javax.swing.JLabel" name="kotaKirimPaketLabel">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Submit"/>
+                        <Property name="text" type="java.lang.String" value="        "/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JRadioButton" name="jRadioButton3">
+                    <Component class="javax.swing.JLabel" name="jLabel3">
                       <Properties>
-                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                          <ComponentRef name="metodePGroup"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="Cash"/>
+                        <Property name="text" type="java.lang.String" value="Ke"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JRadioButton" name="jRadioButton4">
+                    <Component class="javax.swing.JComboBox" name="jenisCombo">
                       <Properties>
-                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                          <ComponentRef name="metodePGroup"/>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="3">
+                            <StringItem index="0" value="Dokumen"/>
+                            <StringItem index="1" value="Elektronik"/>
+                            <StringItem index="2" value="Makanan"/>
+                          </StringArray>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Debit"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                      </AuxValues>
                     </Component>
-                    <Component class="javax.swing.JRadioButton" name="jRadioButton5">
+                    <Component class="javax.swing.JComboBox" name="metodeCombo">
                       <Properties>
-                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                          <ComponentRef name="metodePGroup"/>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="3">
+                            <StringItem index="0" value="Cash"/>
+                            <StringItem index="1" value="Debit"/>
+                            <StringItem index="2" value="Credit Card"/>
+                          </StringArray>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Credit Card"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                      </AuxValues>
                     </Component>
                   </SubComponents>
                 </Container>
               </SubComponents>
             </Container>
+            <Component class="javax.swing.JButton" name="submitButton">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Cambria Math" size="14" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Submit"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="submitButtonActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="Reset">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Cambria Math" size="14" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Reset"/>
+              </Properties>
+            </Component>
             <Container class="javax.swing.JPanel" name="jPanel6">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                    <TitledBorder justification="2" title="Total">
+                    <TitledBorder justification="2" title="Test">
                       <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder roundedCorners="true" thickness="2">
+                        <LineBorder>
                           <Color PropertyName="color" blue="ff" green="33" red="33" type="rgb"/>
                         </LineBorder>
                       </Border>
@@ -876,40 +898,37 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel1" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="jScrollPane3" alignment="0" pref="358" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel1" pref="82" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="jScrollPane3" alignment="0" pref="576" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel1">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Cambria Math" size="14" style="1"/>
-                    </Property>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Rp. 0.0"/>
-                  </Properties>
-                </Component>
+                <Container class="javax.swing.JScrollPane" name="jScrollPane3">
+                  <AuxValues>
+                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                  </AuxValues>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JTextArea" name="printOutArea">
+                      <Properties>
+                        <Property name="editable" type="boolean" value="false"/>
+                        <Property name="columns" type="int" value="20"/>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tahoma" size="11" style="0"/>
+                        </Property>
+                        <Property name="rows" type="int" value="5"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="jButton1">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jButton1"/>
-              </Properties>
-            </Component>
           </SubComponents>
         </Container>
       </SubComponents>

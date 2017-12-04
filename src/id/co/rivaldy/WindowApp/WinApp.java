@@ -5,6 +5,13 @@
  */
 package id.co.rivaldy.WindowApp;
 
+import id.co.rivaldy.WindowApp.DAO.DeliveryServiceList;
+import id.co.rivaldy.WindowApp.DAO.PaymentCost;
+import id.co.rivaldy.WindowApp.Model.Delivery;
+import id.co.rivaldy.WindowApp.Model.Dimention;
+import id.co.rivaldy.WindowApp.Model.Receiver;
+import id.co.rivaldy.WindowApp.Model.Sender;
+import java.util.List;
 
 /**
  *
@@ -12,31 +19,56 @@ package id.co.rivaldy.WindowApp;
  */
 public class WinApp extends javax.swing.JFrame {
 
-    //Kota[] kotas;
-    String kotaPilihan;
+    List<Delivery> kotaTujuan;
+    Sender sender;
+    Receiver receiver;
+    Delivery delivery;
+    Dimention dimensi;
+    PaymentCost cost;
 
     /**
      * Creates new form WinApp
      */
     public WinApp() {
-//        initKota();
+        kotaTujuan = DeliveryServiceList.kotaList();
         initComponents();
+
+        sender = new Sender();
+        receiver = new Receiver();
+        delivery = new Delivery();
+        dimensi = new Dimention();
+        cost = new PaymentCost();
     }
-//
-//    public void initKota() {
-//        Kota kosong = new Kota("-- Pilih Kota --");
-//        Kota bandung = new Kota("Bandung");
-//        Kota malang = new Kota("Malang");
-//        Kota medan = new Kota("Medan");
-//        Kota semarang = new Kota("Semarang");
-//        Kota surabaya = new Kota("Surabaya");
-//        Kota tanggerang = new Kota("Tanggerang");
-//        Kota tasikmalaya = new Kota("Tasikmalaya");
-//        Kota timika = new Kota("Timika");
-//        Kota yogyakarta = new Kota("Yogyakarta");
-//        kotas = new Kota[]{kosong,bandung, malang, medan, semarang, surabaya,
-//            tanggerang, tasikmalaya, timika, yogyakarta};
-//    }
+
+    public void setSendReset() {
+        namaSendField.setText("");
+        noSendField.setText("");
+        provinsiSendField.setText("");
+        kotaSendCombo.setSelectedIndex(0);
+        kotaKirimPaketLabel.setText("");
+        alamatSendArea.setText("");
+        kdPosSendField.setText("");
+    }
+
+    public void setReceiverReset() {
+        namaReceiveField.setText("");
+        noReceiveField.setText("");
+        provinsiReceiverField.setText("");
+        kotaReceiveCombo.setSelectedIndex(0);
+        kotaTujuanPaketLabel.setText("");
+        alamatReceiveArea.setText("");
+        kdPosReceiveField.setText("");
+    }
+
+    public void setPaketReset() {
+        noResiPaketLabel.setText("");
+        beratPaketField.setText("");
+        pPaketField.setText("");
+        lPaketField.setText("");
+        tPaketField.setText("");
+        tipeCombo.setSelectedIndex(0);
+        hargabarangPaketField.setText("");
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -66,8 +98,7 @@ public class WinApp extends javax.swing.JFrame {
         alamatSendArea = new javax.swing.JTextArea();
         kdPosSendLabel = new javax.swing.JLabel();
         kdPosSendField = new javax.swing.JTextField();
-        submitSendButton = new javax.swing.JButton();
-        provinsiSenderField = new javax.swing.JTextField();
+        provinsiSendField = new javax.swing.JTextField();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
         namaReceiveLabel = new javax.swing.JLabel();
@@ -77,12 +108,11 @@ public class WinApp extends javax.swing.JFrame {
         alamatReceiveLabel = new javax.swing.JLabel();
         namaReceiveField = new javax.swing.JTextField();
         noReceiveField = new javax.swing.JTextField();
-        kotaReceiveCombo = new javax.swing.JComboBox<>();
+        kotaReceiveCombo = new javax.swing.JComboBox<>(kotaTujuan.toArray());
         jScrollPane2 = new javax.swing.JScrollPane();
         alamatReceiveArea = new javax.swing.JTextArea();
         kdPosReceiveLabel = new javax.swing.JLabel();
         kdPosReceiveField = new javax.swing.JTextField();
-        submitReceiveButton = new javax.swing.JButton();
         provinsiReceiverField = new javax.swing.JTextField();
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
@@ -93,11 +123,11 @@ public class WinApp extends javax.swing.JFrame {
         tanggalPaketLabel = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         dimensiPaketLabel = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        pPaketField = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        lPaketField = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
+        tPaketField = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
         tipePaketLabel = new javax.swing.JLabel();
         asuransiPaketLabel = new javax.swing.JLabel();
@@ -105,21 +135,22 @@ public class WinApp extends javax.swing.JFrame {
         metodePaketLabel = new javax.swing.JLabel();
         noResiPaketLabel = new javax.swing.JLabel();
         kotaTujuanPaketLabel = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
+        beratPaketField = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        jComboBox5 = new javax.swing.JComboBox<>();
+        tanggalKirimDate = new com.toedter.calendar.JDateChooser();
+        tipeCombo = new javax.swing.JComboBox<>();
         yesAsuransiRadio = new javax.swing.JRadioButton();
         noAsuransiRadio = new javax.swing.JRadioButton();
         hargabarangPaketField = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
+        kotaKirimPaketLabel = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jenisCombo = new javax.swing.JComboBox<>();
+        metodeCombo = new javax.swing.JComboBox<>();
+        submitButton = new javax.swing.JButton();
+        Reset = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        printOutArea = new javax.swing.JTextArea();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -127,6 +158,9 @@ public class WinApp extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        formInputScrollPane.setToolTipText("");
+        formInputScrollPane.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         jLabel2.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -144,6 +178,7 @@ public class WinApp extends javax.swing.JFrame {
 
         alamatSendLabel.setText("Alamat");
 
+        kotaSendCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Jakarta" }));
         kotaSendCombo.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 kotaSendComboItemStateChanged(evt);
@@ -156,17 +191,11 @@ public class WinApp extends javax.swing.JFrame {
         });
 
         alamatSendArea.setColumns(20);
+        alamatSendArea.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         alamatSendArea.setRows(5);
         jScrollPane1.setViewportView(alamatSendArea);
 
         kdPosSendLabel.setText("Kode Pos");
-
-        submitSendButton.setText("Submit");
-        submitSendButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitSendButtonActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -189,14 +218,13 @@ public class WinApp extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(noSendField)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
+                            .addComponent(jScrollPane1)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(kotaSendCombo, 0, 120, Short.MAX_VALUE)
+                                    .addComponent(kotaSendCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(kdPosSendField))
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(provinsiSenderField)))
-                    .addComponent(submitSendButton, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(provinsiSendField))))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -213,7 +241,7 @@ public class WinApp extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(provinsiSendLabel)
-                    .addComponent(provinsiSenderField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(provinsiSendField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(kotaSendLabel)
@@ -226,9 +254,7 @@ public class WinApp extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(kdPosSendLabel)
                     .addComponent(kdPosSendField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                .addComponent(submitSendButton)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Data Pengirim", jPanel2);
@@ -258,12 +284,11 @@ public class WinApp extends javax.swing.JFrame {
         });
 
         alamatReceiveArea.setColumns(20);
+        alamatReceiveArea.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         alamatReceiveArea.setRows(5);
         jScrollPane2.setViewportView(alamatReceiveArea);
 
         kdPosReceiveLabel.setText("Kode Pos");
-
-        submitReceiveButton.setText("Submit");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -272,26 +297,23 @@ public class WinApp extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(noReceiveLabel)
+                    .addComponent(provinsiReceiveLabel)
+                    .addComponent(kotaReceiveLabel)
+                    .addComponent(namaReceiveLabel)
+                    .addComponent(alamatReceiveLabel)
+                    .addComponent(kdPosReceiveLabel))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2)
+                    .addComponent(namaReceiveField)
+                    .addComponent(noReceiveField)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(noReceiveLabel)
-                            .addComponent(provinsiReceiveLabel)
-                            .addComponent(kotaReceiveLabel)
-                            .addComponent(namaReceiveLabel)
-                            .addComponent(alamatReceiveLabel)
-                            .addComponent(kdPosReceiveLabel))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
-                            .addComponent(namaReceiveField)
-                            .addComponent(noReceiveField)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(kotaReceiveCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(kdPosReceiveField, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(provinsiReceiverField)))
-                    .addComponent(submitReceiveButton, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(kotaReceiveCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(kdPosReceiveField, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(provinsiReceiverField))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -321,9 +343,7 @@ public class WinApp extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(kdPosReceiveLabel)
                     .addComponent(kdPosReceiveField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                .addComponent(submitReceiveButton)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Data Penerima", jPanel3);
@@ -332,7 +352,7 @@ public class WinApp extends javax.swing.JFrame {
 
         noPaketLabel.setText("No. Paket");
 
-        tujuanPaketLabel.setText("Kota Tujuan");
+        tujuanPaketLabel.setText("Dari");
 
         jenisPaketLabel.setText("Jenis Barang");
 
@@ -356,18 +376,18 @@ public class WinApp extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(dimensiPaketLabel)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(pPaketField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel21)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lPaketField, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel20)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tPaketField, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel22)))
-                .addGap(0, 43, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -375,11 +395,11 @@ public class WinApp extends javax.swing.JFrame {
                 .addComponent(dimensiPaketLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pPaketField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel21)
                     .addComponent(jLabel20)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lPaketField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tPaketField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel22)))
         );
 
@@ -397,9 +417,9 @@ public class WinApp extends javax.swing.JFrame {
 
         jLabel29.setText("kg");
 
-        jDateChooser1.setDateFormatString("dd/MM/YYYY");
+        tanggalKirimDate.setDateFormatString("dd/MM/YYYY");
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        tipeCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Reguler", "Kilat", "SDS", "ONS", "HDS" }));
 
         asuransiGroup.add(yesAsuransiRadio);
         yesAsuransiRadio.setText("Ya");
@@ -417,16 +437,13 @@ public class WinApp extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("Submit");
+        kotaKirimPaketLabel.setText("        ");
 
-        metodePGroup.add(jRadioButton3);
-        jRadioButton3.setText("Cash");
+        jLabel3.setText("Ke");
 
-        metodePGroup.add(jRadioButton4);
-        jRadioButton4.setText("Debit");
+        jenisCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dokumen", "Elektronik", "Makanan" }));
 
-        metodePGroup.add(jRadioButton5);
-        jRadioButton5.setText("Credit Card");
+        metodeCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cash", "Debit", "Credit Card" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -435,23 +452,6 @@ public class WinApp extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(noPaketLabel)
-                            .addComponent(tujuanPaketLabel)
-                            .addComponent(jenisPaketLabel)
-                            .addComponent(beratPaketLabel)
-                            .addComponent(tanggalPaketLabel))
-                        .addGap(50, 50, 50)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(kotaTujuanPaketLabel)
-                            .addComponent(noResiPaketLabel)
-                            .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel29))
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -460,25 +460,41 @@ public class WinApp extends javax.swing.JFrame {
                             .addComponent(hargaPaketLabel)
                             .addComponent(metodePaketLabel))
                         .addGap(50, 50, 50)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(yesAsuransiRadio)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(noAsuransiRadio))
-                                .addComponent(jComboBox5, 0, 110, Short.MAX_VALUE)
-                                .addComponent(hargabarangPaketField))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jRadioButton3)
+                                .addComponent(yesAsuransiRadio)
                                 .addGap(18, 18, 18)
-                                .addComponent(jRadioButton4)
-                                .addGap(18, 18, 18)
-                                .addComponent(jRadioButton5)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(290, 290, 290)
-                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                                .addComponent(noAsuransiRadio))
+                            .addComponent(tipeCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(hargabarangPaketField)
+                            .addComponent(metodeCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(noPaketLabel)
+                            .addComponent(jenisPaketLabel)
+                            .addComponent(beratPaketLabel)
+                            .addComponent(tanggalPaketLabel)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(tujuanPaketLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(kotaKirimPaketLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(14, 14, 14)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(noResiPaketLabel)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(beratPaketField, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel29))
+                                    .addComponent(tanggalKirimDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jenisCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(kotaTujuanPaketLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -490,26 +506,28 @@ public class WinApp extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tujuanPaketLabel)
-                    .addComponent(kotaTujuanPaketLabel))
+                    .addComponent(kotaTujuanPaketLabel)
+                    .addComponent(kotaKirimPaketLabel)
+                    .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jenisPaketLabel)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jenisCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(beratPaketLabel)
-                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(beratPaketField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel29))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(tanggalPaketLabel)
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tanggalKirimDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tipePaketLabel)
-                    .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tipeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(asuransiPaketLabel)
@@ -522,62 +540,64 @@ public class WinApp extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(metodePaketLabel)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton4)
-                    .addComponent(jRadioButton5))
-                .addGap(32, 32, 32)
-                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                    .addComponent(metodeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane3.addTab("Data Paket", jPanel1);
 
-        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 255), 2, true), "Total", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Cambria Math", 1, 14))); // NOI18N
+        submitButton.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
+        submitButton.setText("Submit");
+        submitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitButtonActionPerformed(evt);
+            }
+        });
 
-        jLabel1.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Rp. 0.0");
+        Reset.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
+        Reset.setText("Reset");
+
+        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 255)), "Test", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Cambria Math", 1, 14))); // NOI18N
+
+        printOutArea.setEditable(false);
+        printOutArea.setColumns(20);
+        printOutArea.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        printOutArea.setRows(5);
+        jScrollPane3.setViewportView(printOutArea);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 576, Short.MAX_VALUE)
         );
-
-        jButton1.setText("jButton1");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jTabbedPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTabbedPane2)
+                            .addComponent(jTabbedPane1))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addGap(0, 0, Short.MAX_VALUE))))
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(691, Short.MAX_VALUE))
+                                .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTabbedPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -585,19 +605,19 @@ public class WinApp extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(34, 34, 34)
+                        .addComponent(jTabbedPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jTabbedPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22))
         );
 
         formInputScrollPane.setViewportView(jPanel5);
@@ -621,11 +641,15 @@ public class WinApp extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(formInputScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 793, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(formInputScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 1059, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(formInputScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 839, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(formInputScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -639,15 +663,13 @@ public class WinApp extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_noReceiveFieldActionPerformed
 
-    private void yesAsuransiRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yesAsuransiRadioActionPerformed
-        if (yesAsuransiRadio.isSelected()) {
-            hargabarangPaketField.setEnabled(false);
-        }
-    }//GEN-LAST:event_yesAsuransiRadioActionPerformed
+    private void kotaSendComboItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_kotaSendComboItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kotaSendComboItemStateChanged
 
-    private void submitSendButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitSendButtonActionPerformed
-        kotaTujuanPaketLabel.setText(kotaPilihan);
-    }//GEN-LAST:event_submitSendButtonActionPerformed
+    private void kotaSendComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kotaSendComboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kotaSendComboActionPerformed
 
     private void noAsuransiRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noAsuransiRadioActionPerformed
         if (noAsuransiRadio.isSelected()) {
@@ -655,16 +677,56 @@ public class WinApp extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_noAsuransiRadioActionPerformed
 
-    private void kotaSendComboItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_kotaSendComboItemStateChanged
-        // TODO add your handling code here:
-//        kotaPilihan = kotaSendCombo.getSelectedItem().toString();
-        //Kota kota = (Kota) kotaSendCombo.getSelectedItem();
+    private void yesAsuransiRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yesAsuransiRadioActionPerformed
+        if (yesAsuransiRadio.isSelected()) {
+            hargabarangPaketField.setEnabled(false);
+        }
+    }//GEN-LAST:event_yesAsuransiRadioActionPerformed
 
-    }//GEN-LAST:event_kotaSendComboItemStateChanged
+    private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
+        //Input Pengirim
+        sender.setNamaPengirim(namaSendField.getText().trim());
+        sender.setNoHp(noSendField.getText().trim());
+        sender.setProvinsi(provinsiSendField.getText().trim());
+        sender.setKota((String) kotaSendCombo.getSelectedItem());
+        sender.setAlamat(alamatSendArea.getText().trim());
+        sender.setKdPos(kdPosSendField.getText().trim());
 
-    private void kotaSendComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kotaSendComboActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_kotaSendComboActionPerformed
+        //Input Penerima
+        receiver.setNamaPenerima(namaReceiveField.getText().trim());
+        receiver.setNoHp(noReceiveField.getText().trim());
+        receiver.setProvinsi(provinsiReceiverField.getText().trim());
+        receiver.setKota((String) kotaReceiveCombo.getSelectedItem());
+        receiver.setAlamat(alamatReceiveArea.getText().trim());
+        receiver.setKdPos(kdPosReceiveField.getText().trim());
+
+        //Input Paket
+        if (yesAsuransiRadio.isSelected()) {
+            delivery.setAsuransi(true);
+            //Proses
+            delivery.setNoPaket(noResiPaketLabel.getText());
+            delivery.setJenisBarang((String) jenisCombo.getSelectedItem());
+            delivery.setBeratBarang(Double.parseDouble(beratPaketField.getText()));
+            delivery.setTglKirim(tanggalKirimDate.getDate());
+            dimensi.setPanjang(Double.parseDouble(pPaketField.getText()));
+            dimensi.setLebar(Double.parseDouble(lPaketField.getText()));
+            dimensi.setTinggi(Double.parseDouble(tPaketField.getText()));
+            delivery.setTipePaket((String) tipeCombo.getSelectedItem());
+            delivery.setMetodePembayaran((String) metodeCombo.getSelectedItem());
+            delivery.setHargaBarang(Double.parseDouble(hargabarangPaketField.getText()));
+
+            double total = cost.hitungCost(delivery);
+            
+            printOutArea.setText("Pengirim \t"+sender.getNamaPengirim()+
+                    "\nNo. Hp \t"+sender.getNoHp()+"\nProvinsi \t"+sender.getProvinsi()+
+                    "\nKota \t"+sender.getKota()+"\nAlamat \t"+sender.getAlamat()+
+                    "\nKode Pos \t"+sender.getKdPos());
+            printOutArea.setText("Penerima \t"+receiver.getNamaPenerima()+
+                    "\nNo. Hp \t"+receiver.getNoHp()+"\nProvinsi \t"+receiver.getProvinsi()+
+                    "\nKota \t"+receiver.getKota()+"\nAlamat \t"+receiver.getAlamat()+
+                    "\nKode Pos \t"+receiver.getKdPos());
+        }
+    }//GEN-LAST:event_submitButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -702,27 +764,25 @@ public class WinApp extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Reset;
     private javax.swing.JTextArea alamatReceiveArea;
     private javax.swing.JLabel alamatReceiveLabel;
     private javax.swing.JTextArea alamatSendArea;
     private javax.swing.JLabel alamatSendLabel;
     private javax.swing.ButtonGroup asuransiGroup;
     private javax.swing.JLabel asuransiPaketLabel;
+    private javax.swing.JTextField beratPaketField;
     private javax.swing.JLabel beratPaketLabel;
     private javax.swing.JLabel dimensiPaketLabel;
     private javax.swing.JScrollPane formInputScrollPane;
     private javax.swing.JLabel hargaPaketLabel;
     private javax.swing.JTextField hargabarangPaketField;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox5;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
@@ -734,29 +794,26 @@ public class WinApp extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JComboBox<String> jenisCombo;
     private javax.swing.JLabel jenisPaketLabel;
     private javax.swing.JTextField kdPosReceiveField;
     private javax.swing.JLabel kdPosReceiveLabel;
     private javax.swing.JTextField kdPosSendField;
     private javax.swing.JLabel kdPosSendLabel;
-    private javax.swing.JComboBox<String> kotaReceiveCombo;
+    private javax.swing.JLabel kotaKirimPaketLabel;
+    private javax.swing.JComboBox<Object> kotaReceiveCombo;
     private javax.swing.JLabel kotaReceiveLabel;
     private javax.swing.JComboBox<String> kotaSendCombo;
     private javax.swing.JLabel kotaSendLabel;
     private javax.swing.JLabel kotaTujuanPaketLabel;
+    private javax.swing.JTextField lPaketField;
+    private javax.swing.JComboBox<String> metodeCombo;
     private javax.swing.ButtonGroup metodePGroup;
     private javax.swing.JLabel metodePaketLabel;
     private javax.swing.JTextField namaReceiveField;
@@ -770,13 +827,17 @@ public class WinApp extends javax.swing.JFrame {
     private javax.swing.JLabel noResiPaketLabel;
     private javax.swing.JTextField noSendField;
     private javax.swing.JLabel noSendLabel;
+    private javax.swing.JTextField pPaketField;
+    private javax.swing.JTextArea printOutArea;
     private javax.swing.JLabel provinsiReceiveLabel;
     private javax.swing.JTextField provinsiReceiverField;
+    private javax.swing.JTextField provinsiSendField;
     private javax.swing.JLabel provinsiSendLabel;
-    private javax.swing.JTextField provinsiSenderField;
-    private javax.swing.JButton submitReceiveButton;
-    private javax.swing.JButton submitSendButton;
+    private javax.swing.JButton submitButton;
+    private javax.swing.JTextField tPaketField;
+    private com.toedter.calendar.JDateChooser tanggalKirimDate;
     private javax.swing.JLabel tanggalPaketLabel;
+    private javax.swing.JComboBox<String> tipeCombo;
     private javax.swing.JLabel tipePaketLabel;
     private javax.swing.JLabel tujuanPaketLabel;
     private javax.swing.JRadioButton yesAsuransiRadio;

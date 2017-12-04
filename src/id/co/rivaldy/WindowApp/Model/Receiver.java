@@ -5,52 +5,58 @@ package id.co.rivaldy.WindowApp.Model;
  * @author RomyRivaldy
  */
 public class Receiver {
-    private String name;
-    private String noTlp;
-    private String province;
-    private String address;
-    private String postalCode;
-String post;
-    public Receiver() {
-    }
-    
-    public String getName() {
-        return name;
+    private String namaPenerima;
+    private String noHp;
+    private String provinsi;
+    private String kota;
+    private String alamat;
+    private String kdPos;
+
+    public String getNamaPenerima() {
+        return namaPenerima;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNamaPenerima(String namaPenerima) {
+        this.namaPenerima = namaPenerima;
     }
 
-    public String getNoTlp() {
-        return noTlp;
+    public String getNoHp() {
+        return noHp;
     }
 
-    public void setNoTlp(String noTlp) {
-        this.noTlp = noTlp;
+    public void setNoHp(String noHp) {
+        this.noHp = noHp;
     }
 
-    public String getProvince() {
-        return province;
+    public String getProvinsi() {
+        return provinsi;
     }
 
-    public void setProvince(String province) {
-        this.province = province;
+    public void setProvinsi(String provinsi) {
+        this.provinsi = provinsi;
     }
 
-    public String getAddress() {
-        return address;
+    public String getKota() {
+        return kota;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setKota(String kota) {
+        this.kota = kota;
     }
 
-    public String getPostalCode() {
-        return postalCode;
+    public String getAlamat() {
+        return alamat;
     }
 
-    public void setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
+    public void setAlamat(String alamat) {
+        this.alamat = alamat;
+    }
+
+    public String getKdPos() {
+        return kdPos;
+    }
+
+    public void setKdPos(String kdPos) {
+        this.kdPos = kdPos;
     }
 }
